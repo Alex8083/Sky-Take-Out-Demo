@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -32,6 +33,7 @@ public class User implements Serializable {
     private String sex;
 
     //身份证号
+    @Pattern(regexp = "^\\d{18}$")
     private String idNumber;
 
     //头像
